@@ -21,11 +21,11 @@ class FizzBuzz
         }
 
         if ($this->isFizz()) {
-            $this->out .= 'fizz';
+            $this->out .= 'Fizz';
         }
 
         if ($this->isBuzz()) {
-            $this->out .= 'buzz';
+            $this->out .= 'Buzz';
         }
 
         if (!$this->isFizz() && !$this->isBuzz()) {
