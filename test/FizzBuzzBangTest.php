@@ -11,42 +11,30 @@ class FizzBuzzBangTest extends \PHPUnit_Framework_TestCase
         $this->fbb = new FizzBuzzBang();
     }
 
-    public function testSevenIsBang()
+    /**
+     * @dataProvider FizzIs3sBuzzIs5sBangIs7sProvider
+     */
+    public function test7sAreBangWhen3sAreFizzAnd5sAreBuzz($expected, $provided)
     {
-        $this->assertEquals('Bang', $this->fbb->run(7));
+        $this->assertEquals($expected, $this->fbb->run($provided));
     }
 
-    public function testSevenPlusSevenIsBang()
+    public function FizzIs3sBuzzIs5sBangIs7sProvider()
     {
-        $this->assertEquals('Bang', $this->fbb->run(14));
-    }
-
-    public function testSevenTimesMultiplesOfThreeIsFizzBang()
-    {
-        $this->assertEquals('FizzBang', $this->fbb->run(21));
-        $this->assertEquals('FizzBang', $this->fbb->run(42));
-    }
-
-    public function testSevenTimesMultiplesOfThreeAndFiveIsFizzBangBuzz()
-    {
-        $this->assertEquals('FizzBuzzBang', $this->fbb->run(105));
-        $this->assertEquals('FizzBuzzBang', $this->fbb->run(210));
-    }
-
-    public function testMultiplesOfSevenSquaredAreBangBang()
-    {
-        $this->assertEquals('BangBang', $this->fbb->run(49));
-        $this->assertEquals('BangBang', $this->fbb->run(98));
-    }
-
-    public function testMultiplesOfThreeAnd49AreFizzBangBang()
-    {
-        $this->assertEquals('FizzBangBang', $this->fbb->run(147));
-        $this->assertEquals('FizzBangBang', $this->fbb->run(441));
-    }
-
-    public function testSevenToSeventhPowerHasSevenBangs()
-    {
-        $this->assertEquals('BangBangBangBangBangBangBang', $this->fbb->run(pow(7,7)));
+        return [
+            'Basic Bang' => ['Bang', 7],
+            'Huge Bang' => ['Bang', 7 * pow(2,20)],
+            'Basic FizzBang' => ['FizzBang', 7*3],
+            'Huge FizzBang' => ['FizzBang', 7*3 * pow(2,20)],
+            'Basic BuzzBang' => ['BuzzBang', 7*5],
+            'Huge BuzzBang' => ['BuzzBang', 7*5 * pow(2,20)],
+            'Basic FizzBuzzBang' => ['FizzBuzzBang', 7*5*3],
+            'Huge FizzBuzzBang' => ['FizzBuzzBang', 7*5*3 * pow(2,20)],
+            'Basic BangBang' => ['BangBang', 7*7],
+            'Huge BangBang' => ['BangBang', 7*7 * pow(2,20)],
+            'Basic FizzBangBang' => ['FizzBangBang', 7*7*3],
+            'Huge FizzBangBang' => ['FizzBangBang', 7*7*3 * pow(2,20)],
+            'Basic BangBangBangBangBangBangBang' => ['BangBangBangBangBangBangBang', pow(7,7)]
+        ];
     }
 }

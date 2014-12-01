@@ -11,32 +11,27 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
         $this->fb = new FizzBuzz();
     }
 
-    public function test0is0()
+    /**
+     * @dataProvider FizzIs3sBuzzIs5sProvider
+     */
+    public function test3sAreFizz5sAreBuzz($expected, $provided)
     {
-        $this->assertEquals('0', $this->fb->run(0));
+        $this->assertEquals($expected, $this->fb->run($provided));
     }
 
-    public function testMultiplesOf3AreFizz()
+    public function FizzIs3sBuzzIs5sProvider()
     {
-        $this->assertEquals('Fizz', $this->fb->run(3));
-        $this->assertEquals('Fizz', $this->fb->run(27));
-    }
-
-    public function testMultiplesOf5AreBuzz()
-    {
-        $this->assertEquals('Buzz', $this->fb->run(5));
-        $this->assertEquals('Buzz', $this->fb->run(25));
-    }
-
-    public function testMultiplesOf3And5AreFizzBuzz()
-    {
-        $this->assertEquals('FizzBuzz', $this->fb->run(15));
-        $this->assertEquals('FizzBuzz', $this->fb->run(45));
-    }
-
-    public function testNeitherFizzNorBuzzIsNum()
-    {
-        $this->assertEquals(4, $this->fb->run(4));
-        $this->assertEquals(398, $this->fb->run(398));
+        return [
+            'Basic Fizz' => ['Fizz', 3],
+            'Huge Fizz' => ['Fizz', 3 * pow(2, 20)],
+            'Basic Buzz' => ['Buzz', 5],
+            'Huge Buzz' => ['Buzz', 5 * pow(2,20)],
+            'Basic FizzBuzz' => ['FizzBuzz', 3*5],
+            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2,20)],
+            'Zero should be a number' => ['0', 0],
+            'One should be a number' => ['1', 1],
+            'Seven should be a number' => ['7', 7],
+            'A huge prime should be a number' => ['5927', 5927]
+        ];
     }
 }
