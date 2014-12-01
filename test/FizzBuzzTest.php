@@ -5,10 +5,12 @@ use TddFizzBuzz\FizzBuzz;
 class FizzBuzzTest extends \PHPUnit_Framework_TestCase
 {
     private $fb;
+    private $bf;
 
     public function setUp()
     {
         $this->fb = new FizzBuzz();
+        $this->bf = new FizzBuzz(5, 3);
     }
 
     /**
@@ -17,6 +19,13 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
     public function test3sAreFizz5sAreBuzz($expected, $provided)
     {
         $this->assertEquals($expected, $this->fb->run($provided));
+    }
+    /**
+     * @dataProvider FizzIs5sBuzzIs3sProvider
+     */
+    public function test5sAreFizz3sAreBuzz($expected, $provided)
+    {
+        $this->assertEquals($expected, $this->bf->run($provided));
     }
 
     public function FizzIs3sBuzzIs5sProvider()
@@ -32,6 +41,15 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
             'One should be a number' => ['1', 1],
             'Seven should be a number' => ['7', 7],
             'A huge prime should be a number' => ['5927', 5927]
+        ];
+    }
+
+    public function FizzIs5sBuzzIs3sProvider()
+    {
+        return [
+            'Huge Fizz' => ['Fizz', 5 * pow(2, 20)],
+            'Huge Buzz' => ['Buzz', 3 * pow(2,20)],
+            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2,20)]
         ];
     }
 }
