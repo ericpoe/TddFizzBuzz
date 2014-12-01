@@ -4,8 +4,16 @@ namespace TddFizzBuzz;
 
 class FizzBuzz
 {
-    protected $out;
+    protected $fizzNum, $buzzNum;
+
     protected $num;
+
+    public function __construct($fizz = 3, $buzz = 5)
+    {
+        $this->fizzNum = $fizz;
+        $this->buzzNum = $buzz;
+        $this->num = 0;
+    }
 
     /**
      * @param integer num
@@ -13,26 +21,36 @@ class FizzBuzz
      */
     public function run($num)
     {
-        $this->out = '';
-        $this->num = $num;
+        $this->setNum($num);
+        $out = '';
 
         if ($this->isZero()) {
-            return $this->num;
+            return $this->getNum();
         }
 
         if ($this->isFizz()) {
-            $this->out .= 'Fizz';
+            $out .= 'Fizz';
         }
 
         if ($this->isBuzz()) {
-            $this->out .= 'Buzz';
+            $out .= 'Buzz';
         }
 
         if (!$this->isFizz() && !$this->isBuzz()) {
-            $this->out = $this->num;
+            $out = $this->getNum();
         }
 
-        return $this->out;
+        return $out;
+    }
+
+    public function setNum($num)
+    {
+        $this->num = $num;
+    }
+
+    public function getNum()
+    {
+        return $this->num;
     }
 
     /**
@@ -48,7 +66,7 @@ class FizzBuzz
      */
     protected function isFizz()
     {
-        return 0 === $this->num % 3;
+        return 0 === $this->num % $this->fizzNum;
     }
 
     /**
@@ -56,6 +74,6 @@ class FizzBuzz
      */
     protected function isBuzz()
     {
-        return 0 === $this->num % 5;
+        return 0 === $this->num % $this->buzzNum;
     }
 }
