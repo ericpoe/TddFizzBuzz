@@ -32,6 +32,7 @@ class FizzBuzzBangTest extends \PHPUnit_Framework_TestCase
     public function FizzIs3sBuzzIs5sBangIs7sProvider()
     {
         return [
+            'One is one' => ['1', 1],
             'Basic Bang' => ['Bang', 7],
             'Huge Bang' => ['Bang', 7 * pow(2,20)],
             'Basic FizzBang' => ['FizzBang', 7*3],
