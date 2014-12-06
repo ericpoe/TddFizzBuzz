@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ericpoe/TddFizzBuzz.svg)](https://travis-ci.org/ericpoe/TddFizzBuzz)
 # TddFizzBuzz
 This is an attempt at the [FizzBuzz kata](http://en.wikipedia.org/wiki/Fizz_buzz) in PHP using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) practices.
 
