@@ -2,6 +2,6 @@
     bootstrap = 'vendor/autoload.php'
     colors = 'true'>
     <testsuite name='fizzbuzz'>
-        <directory>./test</directory>
+        <directory>test</directory>
     </testsuite>
 </phpunit>
