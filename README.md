@@ -12,3 +12,8 @@ Further reading and practice for Katas:
  * John Cleary's [12 TDDs of Christmas](http://www.wiredtothemoon.com/2012/12/12-tdds-of-christmas/)
  * [Cyber Dojo](http://cyber-dojo.org/)
  * [Code Wars](http://www.codewars.com/)
+
+Further reading for TDD and PHPUnit:
+ * [PHPUnit Site](https://phpunit.de)
+ * [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-phpunit)
+ * [The Grumpy Programmer's PHPUnit Cookbook](https://leanpub.com/grumpy-phpunit)
