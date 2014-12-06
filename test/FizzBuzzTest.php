@@ -37,7 +37,7 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
             'Huge Buzz' => ['Buzz', 5 * pow(2,20)],
             'Basic FizzBuzz' => ['FizzBuzz', 3*5],
             'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2,20)],
-            'Zero should be a number' => ['0', 0],
+            'Zero should be zero' => ['0', 0],
             'One should be a number' => ['1', 1],
             'Seven should be a number' => ['7', 7],
             'A huge prime should be a number' => ['5927', 5927]

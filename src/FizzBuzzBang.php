@@ -18,7 +18,12 @@ class FizzBuzzBang extends FizzBuzz
 
     public function run($num)
     {
+        if (0 === $num) {
+            return 0;
+        }
+
         $this->setNum($num);
+
         $this->out = parent::run($num);
 
         if (!$this->isFizz() && !$this->isBuzz()) {
@@ -27,7 +32,7 @@ class FizzBuzzBang extends FizzBuzz
 
         $this->bangOut();
 
-        if (!$this->isFizz() && !$this->isBuzz() && !$this->isBang()) {
+        if (!$this->out) {
             $this->out = $num;
         }
 
@@ -37,19 +42,15 @@ class FizzBuzzBang extends FizzBuzz
     protected function bangOut()
     {
         $temp = $this->num;
+
         while($this->isBang($temp)) {
             $this->out .= 'Bang';
             $temp /= $this->bangNum;
         }
     }
 
-    protected function isBang($num = null)
+    protected function isBang($num)
     {
-        // If $num is not explicitly provided, grab the implicit $num
-        if (is_null($num)) {
-            $num = $this->num;
-        }
-
         return 0 === $num % $this->bangNum;
     }
 }

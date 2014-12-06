@@ -21,12 +21,12 @@ class FizzBuzz
      */
     public function run($num)
     {
+        if (0 === $num) {
+            return 0;
+        }
+
         $this->setNum($num);
         $out = '';
-
-        if ($this->isZero()) {
-            return $this->getNum();
-        }
 
         if ($this->isFizz()) {
             $out .= 'Fizz';
@@ -36,7 +36,7 @@ class FizzBuzz
             $out .= 'Buzz';
         }
 
-        if (!$this->isFizz() && !$this->isBuzz()) {
+        if (!$out) {
             $out = $this->getNum();
         }
 
@@ -51,14 +51,6 @@ class FizzBuzz
     public function getNum()
     {
         return $this->num;
-    }
-
-    /**
-     * @return Boolean
-     */
-    protected function isZero()
-    {
-        return 0 === $this->num;
     }
 
     /**

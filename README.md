@@ -6,8 +6,6 @@ Included in this kata is an extension to [FizzBuzz](src/FizzBuzz.php) that I hav
 
 As an added bonus, I am giving the implementor of the FizzBuzz and FizzBuzzBang classes the opportunity to determine which numbers become Fizz, Buzz, and Bang.
 
-I left some room for improvement in the implementation details in the tested classes. I did this to show that if the tests are complete, the implementation details can change without affecting the tests.
-
 Further reading and practice for Katas:
  * John Cleary's [12 TDDs of Christmas](http://www.wiredtothemoon.com/2012/12/12-tdds-of-christmas/)
  * [Cyber Dojo](http://cyber-dojo.org/)
