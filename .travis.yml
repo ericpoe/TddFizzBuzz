@@ -12,7 +12,8 @@ php:
   # aliased to a recent 5.6.x version
   - 5.6
 
-script: phpunit --configuration phpunit.xml
+script:
+  - phpunit
 
 # configure notifications (email, IRC, campfire etc)
 notifications:
