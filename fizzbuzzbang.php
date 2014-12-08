@@ -7,9 +7,9 @@ $fizzer = new FizzBuzzBang();
 
 foreach(range(1,5000) as $num) {
     $message = $fizzer->run($num);
-    echo "$message ";
-    if ('BangBangBangBang' === $message) {
-        echo '!' . PHP_EOL;
+    if ('BangBangBang' === $message) {
+        echo "{$message}!" . PHP_EOL;
         exit;
     }
+    echo "$message ";
 }
