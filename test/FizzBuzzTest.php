@@ -1,5 +1,7 @@
 <?php
 
+namespace TddFizzBuzzTest\FizzBuzz;
+
 use TddFizzBuzz\FizzBuzz;
 
 class FizzBuzzTest extends \PHPUnit_Framework_TestCase
@@ -28,15 +30,15 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->bf->run($provided));
     }
 
-    public function FizzIs3sBuzzIs5sProvider()
+    public function fizzIs3sBuzzIs5sProvider()
     {
         return [
             'Basic Fizz' => ['Fizz', 3],
             'Huge Fizz' => ['Fizz', 3 * pow(2, 20)],
             'Basic Buzz' => ['Buzz', 5],
-            'Huge Buzz' => ['Buzz', 5 * pow(2,20)],
+            'Huge Buzz' => ['Buzz', 5 * pow(2, 20)],
             'Basic FizzBuzz' => ['FizzBuzz', 3*5],
-            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2,20)],
+            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2, 20)],
             'Zero should be zero' => ['0', 0],
             'One should be a number' => ['1', 1],
             'Seven should be a number' => ['7', 7],
@@ -44,12 +46,12 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
-    public function FizzIs5sBuzzIs3sProvider()
+    public function fizzIs5sBuzzIs3sProvider()
     {
         return [
             'Huge Fizz' => ['Fizz', 5 * pow(2, 20)],
-            'Huge Buzz' => ['Buzz', 3 * pow(2,20)],
-            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2,20)]
+            'Huge Buzz' => ['Buzz', 3 * pow(2, 20)],
+            'Huge FizzBuzz' => ['FizzBuzz', 3*5 * pow(2, 20)]
         ];
     }
 }

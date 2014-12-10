@@ -16,5 +16,10 @@
         "psr-4": {
             "TddFizzBuzz\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TddFizzBuzzTests\\": "test/"
+        }
     }
 }

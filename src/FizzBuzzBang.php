@@ -43,7 +43,7 @@ class FizzBuzzBang extends FizzBuzz
     {
         $temp = $this->num;
 
-        while($this->isBang($temp)) {
+        while ($this->isBang($temp)) {
             $this->out .= 'Bang';
             $temp /= $this->bangNum;
         }

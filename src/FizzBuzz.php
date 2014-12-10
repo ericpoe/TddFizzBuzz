@@ -4,7 +4,8 @@ namespace TddFizzBuzz;
 
 class FizzBuzz
 {
-    protected $fizzNum, $buzzNum;
+    protected $fizzNum;
+    protected $buzzNum;
 
     protected $num;
 
