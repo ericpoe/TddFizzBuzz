@@ -1,6 +1,6 @@
 <?php
 
-namespace TddFizzBuzzTest\FizzBuzz;
+namespace TddFizzBuzz\Test\FizzBuzz;
 
 use TddFizzBuzz\FizzBuzzBang;
 
