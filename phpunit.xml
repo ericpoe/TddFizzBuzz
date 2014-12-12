@@ -3,6 +3,10 @@
     colors = 'true'>
     <testsuite name='fizzbuzz'>
         <directory>./test</directory>
-        <exclude>./vendor</exclude>
     </testsuite>
+    <filter>
+        <exclude>
+            <directory>vendor/</directory>
+        </exclude>
+    </filter>
 </phpunit>
