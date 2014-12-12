@@ -4,9 +4,4 @@
     <testsuite name='fizzbuzz'>
         <directory>./test</directory>
     </testsuite>
-    <filter>
-        <exclude>
-            <directory>vendor/</directory>
-        </exclude>
-    </filter>
 </phpunit>
